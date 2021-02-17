@@ -8,12 +8,13 @@ playButton.addEventListener('click', (e) => {
   console.log('yo')
 })
 
-
+let is_playing = false
 let analyzer
 let frequencyArray
 let audio
 
 function startAudio() {
+    is_playing = true
     const audio = new Audio()
     const audioContext = new (window.AudioContext || window.webkitAudioContext)()
 
@@ -36,6 +37,7 @@ function startAudio() {
 
     pauseButton.addEventListener('click', (e) => {
         audio.pause()
+        is_playing = false
     })
     
     requestAnimationFrame(render)
@@ -46,6 +48,10 @@ function startAudio() {
 
 function render() {
 
+    if (is_playing === false) {
+        return
+    }
+    
     const canvas = document.getElementById('canvas')
     const ctx = canvas.getContext('2d')
 
