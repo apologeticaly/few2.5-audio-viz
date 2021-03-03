@@ -7,9 +7,45 @@
 
 </head>
 <body>
-    <canvas id="canvas" width="300" height="300"></canvas>
-    <button id="button-play">Play</button>
-    <button id="button-pause">Pause</button>
+    <div class="graph">
+        <canvas id="canvas" width="1500" height="500" style="border:2px solid #000000;"></canvas>
+    </div>
+    <div class="controls">
+        <button id="button-play">▶</button>
+        <button id="button-pause">⏏</button>
+    </div>
     <script src="script.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .graph {
+            margin: 5rem auto;
+        }
+
+        .controls {
+            flex-direction: column;
+            margin: 0 auto
+        }
+
+        #button-play {
+            padding: 0.5rem 1rem;
+            background-color: #c3e29e;
+            color: black;
+            font-weight: bold;
+        }
+
+        #button-pause {
+            padding: 0.5rem 1rem;
+            background-color: #e29e9e;
+            color: black;
+            font-weight: bold;
+        }
+
+
+    </style>
 </body>
 </html>
